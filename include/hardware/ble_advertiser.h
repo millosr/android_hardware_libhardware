@@ -67,8 +67,7 @@ class BleAdvertiserInterface {
 
   /* Enable the advertising instance */
   virtual void Enable(uint8_t advertiser_id, bool enable, StatusCallback cb,
-                      uint16_t duration, uint8_t maxExtAdvEvents,
-                      StatusCallback timeout_cb) = 0;
+                      int timeout_s, StatusCallback timeout_cb) = 0;
 
   /*  Unregisters an advertiser */
   virtual void Unregister(uint8_t advertiser_id) = 0;
@@ -87,8 +86,8 @@ class BleAdvertiserInterface {
       std::vector<uint8_t> advertise_data,
       std::vector<uint8_t> scan_response_data,
       PeriodicAdvertisingParameters periodic_params,
-      std::vector<uint8_t> periodic_data, uint16_t duration,
-      uint8_t maxExtAdvEvents, IdStatusCallback timeout_cb) = 0;
+      std::vector<uint8_t> periodic_data, int timeout_s,
+      IdStatusCallback timeout_cb) = 0;
 
   virtual void SetPeriodicAdvertisingParameters(
       int advertiser_id, PeriodicAdvertisingParameters parameters,

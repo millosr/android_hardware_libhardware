@@ -315,7 +315,8 @@ typedef struct {
 
     /** Write a remote descriptor for a given characteristic */
     bt_status_t (*write_descriptor)( int conn_id, uint16_t handle,
-                    int auth_req, vector<uint8_t> value);
+                    int write_type, int auth_req,
+                    vector<uint8_t> value);
 
     /** Execute a prepared write operation */
     bt_status_t (*execute_write)(int conn_id, int execute);

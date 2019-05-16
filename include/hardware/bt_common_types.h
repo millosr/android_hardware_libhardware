@@ -70,7 +70,6 @@ typedef struct
      * the characteristic.
      */
     uint8_t             properties;
-    uint16_t            permissions;
 } btgatt_db_element_t;
 
 #endif  /* ANDROID_INCLUDE_BT_COMMON_TYPES_H */
